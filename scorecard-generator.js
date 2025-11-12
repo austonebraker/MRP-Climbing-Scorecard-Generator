@@ -148,8 +148,7 @@ function parseClimberData(sheet) {
   // Find all boulder ticket columns
   const ticketColumns = [];
   headerRow.forEach((header, idx) => {
-    if (header && header.toString().endsWith(' boulder ticket') && !header.toString().includes('status')) {
-      const category = header.toString().replace(' boulder ticket', '');
+if (header && (header.toString().endsWith(' boulder ticket') || header.toString().endsWith(' lead ticket') || header.toString().endsWith(' rope ticket')) && !header.toString().includes('status')) {      const category = header.toString().replace(' boulder ticket', '');
       ticketColumns.push({ index: idx, category: category });
     }
   });
